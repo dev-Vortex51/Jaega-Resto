@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1f1d2b;
+  font-family: 'Open Sans', sans-serif;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.drop-shadow {
+  box-shadow: 0 8px 24px 0px rgba(234, 124, 105, 0.3);
+}
+
+/* .app{
+  @apply w-[14px] h-[14px] bg-[#50d1aa]/30 flex items-center justify-center text-xs rounded-full text-[#50d1aa] p-[10px]
+} */
+
+.truncated-text {
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  text-overflow: ellipsis; /* Add ellipsis (…) to indicate truncated text */
+}
+
