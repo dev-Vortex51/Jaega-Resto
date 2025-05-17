@@ -5,15 +5,15 @@ import { useNavigate } from 'react-router-dom';
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
-  const { isLoading, isAuthenticated } = useUser();
+  const { isPending, isAuthenticated } = useUser();
 
   useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
+    if (!isPending && !isAuthenticated) {
       navigate('/login', { replace: true });
     }
-  }, [isLoading, isAuthenticated, navigate]);
+  }, [isPending, isAuthenticated, navigate]);
 
-  // if (isLoading) {
+  // if (isPending) {
   //   return <div>Loading...</div>;
   // }
 

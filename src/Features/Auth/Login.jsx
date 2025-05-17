@@ -8,7 +8,7 @@ const Login = () => {
   const { handleSubmit, register, formState } = useForm();
 
   const { errors } = formState;
-  const { login, isLoading } = useLogin();
+  const { login, isPending } = useLogin();
 
   function onLogin({ email, password }) {
     login({ email, password });
@@ -57,10 +57,10 @@ const Login = () => {
 
         <button
           type='submit'
-          disabled={isLoading}
+          disabled={isPending}
           className='submit-button w-full mt-4 text-white bg-[#EA7C69] p-4 rounded-md font-bold hover:bg-transparent border-2 border-[#ea7c69] transition-colors duration-200 hover:text-[#ea7c69]'
         >
-          {isLoading ? 'Signing in...' : 'Sign in'}
+          {isPending ? 'Signing in...' : 'Sign in'}
         </button>
       </form>
       <div className='register-prompt flex gap-3 justify-end'>

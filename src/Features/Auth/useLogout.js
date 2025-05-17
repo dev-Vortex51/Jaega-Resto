@@ -7,10 +7,10 @@ export function useLogout() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
-  const { isLoading, mutate: logout } = useMutation({
+  const { isPending, mutate: logout } = useMutation({
     mutationFn: logoutApi,
     onSuccess: (data) => {
-      queryClient.removeQueries(['user']);
+      queryClient.removeQuery(['user']);
 
       toast.success('User logged out');
       navigate('/login', { state: { email: data?.user.email } });
@@ -20,5 +20,5 @@ export function useLogout() {
     },
   });
 
-  return { logout, isLoading };
+  return { logout, isPending };
 }

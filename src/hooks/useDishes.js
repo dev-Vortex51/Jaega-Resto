@@ -4,7 +4,7 @@ import { getDishes } from '../services/api';
 export function useDishes() {
   const {
     data: dishes,
-    isLoading,
+    isPending,
     isError,
   } = useQuery({
     queryKey: ['dishes'],
@@ -12,5 +12,5 @@ export function useDishes() {
     staleTime: 0,
   });
 
-  return { dishes, isLoading, isError };
+  return { dishes, isPending, isError };
 }

@@ -17,7 +17,7 @@ function Menu() {
   const [query, setQuery] = useState('');
   const { orderItems } = useOrder();
   const { categories } = useCategories();
-  const { dishes, isLoading, isError } = useDishes();
+  const { dishes, isPending, isError } = useDishes();
   const filteredDish = useMemo(() => {
     return dishes?.filter(
       (dish) =>
@@ -99,7 +99,7 @@ function Menu() {
           bg={'#1F1D2B'}
         />
       </div>
-      {isLoading && (
+      {isPending && (
         <div
           style={{
             display: 'flex',
