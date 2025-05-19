@@ -1,4 +1,4 @@
-# Project Name
+# Jaega Resto
 
 A modern web application built with [React.js](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [Supabase](https://supabase.com/).
 
